@@ -1,5 +1,5 @@
 class Menu
- attr_accessor :name
+ attr_accessor :namefffasfda
  attr_accessor :price
   # get_total_priceメソッドを定義してください
 
