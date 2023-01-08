@@ -1,35 +1,30 @@
 class Bingo
-    attr_accessor:b   
-    attr_accessor:i  
-    attr_accessor:n 
-    attr_accessor:g 
-    attr_accessor:o
-    def initialize
-        [*1..5].each do |y|
-            [*1..5].each do |i|
-            if i==1 
-                @b = rand(1..15)
-            end
-            if i==2 
-                @i = rand(16..30)
-            end
-            if i==3 
-                @n = rand(31..45)
-            end
-            if i==4 
-                @g = rand(46..60)
-            end
-            if i==5 
-                @o = rand(61..75)
-            end
-            end
-            if y==3
-                puts " #{b} | #{i} |    | #{g} | #{o}   "
-            else
-                puts " #{b} | #{i} | #{n} | #{g} | #{o}   "
-            end
-        end 
-        end
+  attr_accessor :b
+  attr_accessor :i
+  attr_accessor :n
+  attr_accessor :g
+  attr_accessor :o
+
+  def initialize
+    @b = (01..15).to_a.sample(5)
+    @i = (16..30).to_a.sample(5)
+    @n = (31..45).to_a.sample(5)
+    @n[2] = '  '
+    @g = (46..60).to_a.sample(5)
+    @o = (61..75).to_a.sample(5)
+  end
+
+  def showBingoSheet
+    puts " B| I| N| G| O"
+    for a in 0..4 do
+      row = []
+      [b,i,n,g,o].each do |character|
+        row.push(character[a])
+      end
+        puts "#{format('%2s',row[0])}|#{format('%2s',row[1])}|#{format('%2s',row[2])}|#{format('%2s',row[3])}|#{format('%2s',row[4])}"
+    end
+  end
 end
-puts " B | I | N | G | O   "
-row1 = Bingo.new
+
+sheet = Bingo.new
+sheet.showBingoSheet
