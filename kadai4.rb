@@ -17,13 +17,11 @@ class Bingo
   def printCard
     puts " B |  I |  N |  G |  O"
     for a in 0..4 do
-      puts "#{format('%3s',@b[a])}|#{format('%3s',@i[a])} |#{format('%3s',@n[a])} |#{format('%3s',@g[a])} |#{format('%3s',@o[a])}"
+      puts "#{format('%2s',@b[a])} |#{format('%3s',@i[a])} |#{format('%3s',@n[a])} |#{format('%3s',@g[a])} |#{format('%3s',@o[a])}"
     end
   end
 end
 
 card1 = Bingo.new
 card1.printCard
-card2 = Bingo.new
-card2.printCard
   
